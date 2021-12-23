@@ -3,6 +3,8 @@ var searchButton = document.getElementById("search-button")
 var input = document.querySelector(".input-box")
 var dashboard = document.getElementById("dashboard");
 
+var weatherArray = JSON.parse(localStorage.getItem("state")) || [];
+
 
 searchButton.addEventListener('click', latlonApi);
 
@@ -22,11 +24,52 @@ function latlonApi() {
     return data.json();
     }) .then(function (weatherData) {
         console.log(weatherData);
+        displayData(weatherData);
     } 
     )
+    //Set new weather array into local storage
+    weatherArray.push(search);
+    localStorage.setItem("state", JSON.stringify(weatherArray));
 }) 
 }
 
-function displayWeather(data) {
-    
-}
+// var information = document.createElement('p');
+// information.textContent = data.title;
+
+function displayData(data) {
+    $("#display-weather").empty();
+        //clear previous row
+        console.log(data.current);
+        var mainCard = document.createElement("div");
+
+        var cityName = document.createElement("h2");
+
+        cityName.textContent = input.value.toUpperCase();
+
+        var currentDate = document.createElement("h2");
+
+        currentDate.textContent = moment().format('L');
+
+        var temperature = document.createElement("p");
+
+        temperature.textContent = "Temp: " + data.current.temp;
+
+        var windSpeed = document.createElement("p");
+
+        windSpeed.textContent = "Wind Speed: " + data.current.wind_speed;
+
+        var humidity = document.createElement("p");
+
+        humidity.textContent = "Humidity: " + data.current.humidity;
+
+        var uvIndex = document.createElement("p");
+
+        uvIndex.textContent = "UV Index: " + data.current.uvi;
+
+        mainCard.append(currentDate, cityName, temperature, windSpeed, humidity, uvIndex);
+
+        //Append display-weather to temperature
+        $("#display-weather").append(mainCard);
+        console.log(data);
+    }
+
