@@ -14,7 +14,7 @@ This application uses server-side APIs to retreive data from a separate weather 
 - Click on a city in the search history list to display the weather data on that city
 
 #
-
+![image](https://user-images.githubusercontent.com/92955084/147171593-44037b70-5afa-48a4-9d58-128b8480f683.png)
 
 
 ## URL
