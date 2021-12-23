@@ -81,11 +81,11 @@ function displayForecast1(data) {
 
     var currentDate1 = document.createElement("h3");
 
-    currentDate1.textContent = moment().format('L');
+    currentDate1.textContent = moment().add(1, 'days').format('L');
 
     var temperature1 = document.createElement("p");
 
-    temperature1.textContent = "Temp: " + data.daily[0].temp;
+    temperature1.textContent = "Temp: " + data.daily[0].temp.day;
 
     var windSpeed1 = document.createElement("p");
 
