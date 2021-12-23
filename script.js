@@ -25,6 +25,7 @@ function latlonApi() {
     }) .then(function (weatherData) {
         console.log(weatherData);
         displayData(weatherData);
+        displayForecast1(weatherData);
     } 
     )
     //Set new weather array into local storage
@@ -73,3 +74,30 @@ function displayData(data) {
         console.log(data);
     }
 
+function displayForecast1(data) {
+    $("#display-forecast1").empty();
+        
+    var mainCard1 = document.createElement("div");
+
+    var currentDate1 = document.createElement("h3");
+
+    currentDate1.textContent = moment().format('L');
+
+    var temperature1 = document.createElement("p");
+
+    temperature1.textContent = "Temp: " + data.daily[0].temp;
+
+    var windSpeed1 = document.createElement("p");
+
+    windSpeed1.textContent = "Wind Speed: " + data.daily[0].wind_speed;
+
+    var humidity1 = document.createElement("p");
+
+    humidity1.textContent = "Humidity: " + data.daily[0].humidity;
+
+    mainCard1.append(currentDate1, temperature1, windSpeed1, humidity1);
+
+        //Append display-weather to temperature
+        $("#display-forecast1").append(mainCard1);
+        console.log(data);
+}

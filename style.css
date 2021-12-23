@@ -12,4 +12,17 @@ h1 {
 
 #search-button {
     display: inline-flex;
+    color: brown;
+    border-radius: 0%;
+}
+
+#display-weather {
+    border-style: groove;
+    border-color: brown;
+    display: inline;
+    margin-left: 20%;
+}
+
+#p {
+    border: solid;
 }
