@@ -14,15 +14,41 @@ h1 {
     display: inline-flex;
     color: brown;
     border-radius: 0%;
+    padding-right: 20px;
+}
+
+#todays-container {
+    display: inline-flex;
+}
+
+#forecast-container {
+    display: flex;
+    border-style: solid;
+    border-color: brown;
 }
 
 #display-weather {
     border-style: groove;
     border-color: brown;
-    display: inline;
-    margin-left: 20%;
+    padding: 10px 200px 10px 2px;
 }
 
-#p {
-    border: solid;
+#display-forecast1 {
+    padding: 10px 5px 10px;
+}
+
+#display-forecast2 {
+    padding: 10px 5px 10px;
+}
+
+#display-forecast3 {
+    padding: 10px 5px 10px;
+}
+
+#display-forecast4 {
+    padding: 10px 5px 10px;
+}
+
+#display-forecast5 {
+    padding: 10px 5px 10px;
 }
