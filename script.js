@@ -116,6 +116,10 @@ function displayForecast1(data) {
 
     currentDate1.textContent = moment().add(1, 'days').format('L');
 
+    var icon1 = document.createElement("img");
+
+    icon1.src = "http://openweathermap.org/img/wn/" + data.daily[0].weather[0].icon + ".png";
+
     var temperature1 = document.createElement("p");
 
     temperature1.textContent = "Temp: " + data.daily[0].temp.day;
@@ -128,7 +132,7 @@ function displayForecast1(data) {
 
     humidity1.textContent = "Humidity: " + data.daily[0].humidity;
 
-    mainCard1.append(currentDate1, temperature1, windSpeed1, humidity1);
+    mainCard1.append(currentDate1, icon1, temperature1, windSpeed1, humidity1);
 
         //Append display-weather to temperature
         $("#display-forecast1").append(mainCard1);
@@ -144,6 +148,10 @@ function displayForecast2(data) {
 
     currentDate2.textContent = moment().add(2, 'days').format('L');
 
+    var icon2 = document.createElement("img");
+
+    icon2.src = "http://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon + ".png";
+
     var temperature2 = document.createElement("p");
 
     temperature2.textContent = "Temp: " + data.daily[1].temp.day;
@@ -156,7 +164,7 @@ function displayForecast2(data) {
 
     humidity2.textContent = "Humidity: " + data.daily[1].humidity;
 
-    mainCard2.append(currentDate2, temperature2, windSpeed2, humidity2);
+    mainCard2.append(currentDate2, icon2, temperature2, windSpeed2, humidity2);
 
         //Append display-weather to temperature
         $("#display-forecast2").append(mainCard2);
@@ -172,6 +180,10 @@ function displayForecast3(data) {
 
     currentDate3.textContent = moment().add(3, 'days').format('L');
 
+    var icon3 = document.createElement("img");
+
+    icon3.src = "http://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png";
+
     var temperature3 = document.createElement("p");
 
     temperature3.textContent = "Temp: " + data.daily[2].temp.day;
@@ -184,7 +196,7 @@ function displayForecast3(data) {
 
     humidity3.textContent = "Humidity: " + data.daily[2].humidity;
 
-    mainCard3.append(currentDate3, temperature3, windSpeed3, humidity3);
+    mainCard3.append(currentDate3, icon3, temperature3, windSpeed3, humidity3);
 
         //Append display-weather to temperature
         $("#display-forecast3").append(mainCard3);
@@ -200,6 +212,10 @@ function displayForecast4(data) {
 
     currentDate4.textContent = moment().add(4, 'days').format('L');
 
+    var icon4 = document.createElement("img");
+
+    icon4.src = "http://openweathermap.org/img/wn/" + data.daily[3].weather[0].icon + ".png";
+
     var temperature4 = document.createElement("p");
 
     temperature4.textContent = "Temp: " + data.daily[3].temp.day;
@@ -212,7 +228,7 @@ function displayForecast4(data) {
 
     humidity4.textContent = "Humidity: " + data.daily[3].humidity;
 
-    mainCard4.append(currentDate4, temperature4, windSpeed4, humidity4);
+    mainCard4.append(currentDate4, icon4, temperature4, windSpeed4, humidity4);
 
         //Append display-weather to temperature
         $("#display-forecast4").append(mainCard4);
@@ -228,6 +244,10 @@ function displayForecast5(data) {
 
     currentDate5.textContent = moment().add(5, 'days').format('L');
 
+    var icon5 = document.createElement("img");
+
+    icon5.src = "http://openweathermap.org/img/wn/" + data.daily[4].weather[0].icon + ".png";
+
     var temperature5 = document.createElement("p");
 
     temperature5.textContent = "Temp: " + data.daily[4].temp.day;
@@ -240,7 +260,7 @@ function displayForecast5(data) {
 
     humidity5.textContent = "Humidity: " + data.daily[4].humidity;
 
-    mainCard5.append(currentDate5, temperature5, windSpeed5, humidity5);
+    mainCard5.append(currentDate5, icon5, temperature5, windSpeed5, humidity5);
 
         //Append display-weather to temperature
         $("#display-forecast5").append(mainCard5);
