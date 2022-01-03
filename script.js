@@ -2,15 +2,30 @@ var APIKey = "8ba3c018f452a9c2616cb1d28059dd82"
 var searchButton = document.getElementById("search-button")
 var input = document.querySelector(".input-box")
 var dashboard = document.getElementById("dashboard");
-
+var searchList = document.getElementById("search-list");
 var weatherArray = JSON.parse(localStorage.getItem("state")) || [];
-
 
 searchButton.addEventListener('click', latlonApi);
 
+function renderList(search){
+    searchList.innerHTML = "";
+    if (search !== null) {
+        weatherArray.push(search)
+        localStorage.setItem("state", JSON.stringify(weatherArray));
+    }
+    
+    for (i=0; i < weatherArray.length; i++) {
+        var button = document.createElement("button")
+        button.textContent = weatherArray[i];
+        searchList.append(button);
+
+    }
+}
+renderList(null);
 
 function latlonApi() {
     var search = input.value
+    renderList(search);
     var URL = "http://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=1&appid=8ba3c018f452a9c2616cb1d28059dd82"
     fetch(URL)
         .then(function (data) {
@@ -33,8 +48,8 @@ function latlonApi() {
     } 
     )
     //Set new weather array into local storage
-    weatherArray.push(search);
-    localStorage.setItem("state", JSON.stringify(weatherArray));
+    // weatherArray.push(search);
+    
 }) 
 }
 
@@ -50,6 +65,10 @@ function displayData(data) {
         var cityName = document.createElement("h2");
 
         cityName.textContent = input.value.toUpperCase();
+
+        var icon = document.createElement("img");
+
+        icon.src = "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + ".png";
 
         var currentDate = document.createElement("h2");
 
@@ -71,10 +90,20 @@ function displayData(data) {
 
         uvIndex.textContent = "UV Index: " + data.current.uvi;
 
-        mainCard.append(currentDate, cityName, temperature, windSpeed, humidity, uvIndex);
+        if (data.current.uvi <= 2) {
+            uvIndex.style.backgroundColor = "green";
+        } else if (data.current.uvi >= 3 && data.current.uvi <= 5) {
+            uvIndex.style.backgroundColor = "yellow";
+        } else if (data.current.uvi >= 6 && data.current.uvi <=7) {
+            uvIndex.style.backgroundColor = "orange";
+        } else { uvIndex.style.backgroundColor = "red";
+        }
+
+        mainCard.append(currentDate, cityName, icon, temperature, windSpeed, humidity, uvIndex);
 
         //Append display-weather to temperature
         $("#display-weather").append(mainCard);
+        input.value = "";
         console.log(data);
     }
 
@@ -217,3 +246,5 @@ function displayForecast5(data) {
         $("#display-forecast5").append(mainCard5);
         console.log(data);
 }
+
+var cityNameArray = [];
