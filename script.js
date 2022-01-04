@@ -30,7 +30,7 @@ function latlonApi() {
     var search = input.value
     renderList(search);
     //Added parameter in URL for searched city
-    var URL = "http://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=1&appid=8ba3c018f452a9c2616cb1d28059dd82"
+    var URL = "https://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=1&appid=8ba3c018f452a9c2616cb1d28059dd82"
     fetch(URL)
         .then(function (data) {
     return data.json();
