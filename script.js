@@ -5,8 +5,10 @@ var dashboard = document.getElementById("dashboard");
 var searchList = document.getElementById("search-list");
 var weatherArray = JSON.parse(localStorage.getItem("state")) || [];
 
+//Lat/LonAPI Function will run when the search button is clicked
 searchButton.addEventListener('click', latlonApi);
 
+//Function to create list of past searches
 function renderList(search){
     searchList.innerHTML = "";
     if (search !== null) {
@@ -23,9 +25,11 @@ function renderList(search){
 }
 renderList(null);
 
+//Function to fetch lattitude & longitude data/geo code and city name based on search
 function latlonApi() {
     var search = input.value
     renderList(search);
+    //Added parameter in URL for searched city
     var URL = "http://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=1&appid=8ba3c018f452a9c2616cb1d28059dd82"
     fetch(URL)
         .then(function (data) {
@@ -33,13 +37,16 @@ function latlonApi() {
     }) .then(function (geoCode) {
         console.log(geoCode)
 
+    //Lat/Lon parameters added to URL    
     var weatherURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + geoCode[0].lat + "&lon=" + geoCode[0].lon + "&appid=8ba3c018f452a9c2616cb1d28059dd82"
     fetch(weatherURL)
         .then(function (data) {
     return data.json();
     }) .then(function (weatherData) {
         console.log(weatherData);
+        //Display current weather for searched city
         displayData(weatherData);
+        //Display 5-day forecast for searched city
         displayForecast1(weatherData);
         displayForecast2(weatherData);
         displayForecast3(weatherData);
@@ -56,6 +63,7 @@ function latlonApi() {
 // var information = document.createElement('p');
 // information.textContent = data.title;
 
+//Function to display today/initial weather data
 function displayData(data) {
     $("#display-weather").empty();
         //clear previous row
@@ -101,13 +109,16 @@ function displayData(data) {
 
         mainCard.append(currentDate, cityName, icon, temperature, windSpeed, humidity, uvIndex);
 
-        //Append display-weather to temperature
+        //Append display-weather to main card
         $("#display-weather").append(mainCard);
         input.value = "";
         console.log(data);
     }
 
+//Function to display forecast for 1st day 
 function displayForecast1(data) {
+
+    //Clear previous row
     $("#display-forecast1").empty();
         
     var mainCard1 = document.createElement("div");
@@ -134,12 +145,15 @@ function displayForecast1(data) {
 
     mainCard1.append(currentDate1, icon1, temperature1, windSpeed1, humidity1);
 
-        //Append display-weather to temperature
+        //Append display-foreast to main card
         $("#display-forecast1").append(mainCard1);
         console.log(data);
 }
 
+//Function to display forecast for 2nd day
 function displayForecast2(data) {
+
+    //Clear previous row
     $("#display-forecast2").empty();
         
     var mainCard2 = document.createElement("div");
@@ -166,12 +180,15 @@ function displayForecast2(data) {
 
     mainCard2.append(currentDate2, icon2, temperature2, windSpeed2, humidity2);
 
-        //Append display-weather to temperature
+        //Append display-foreast to main card
         $("#display-forecast2").append(mainCard2);
         console.log(data);
 }
 
+//Function to display forecast for 3rd day
 function displayForecast3(data) {
+
+    //Clear previous row
     $("#display-forecast3").empty();
         
     var mainCard3 = document.createElement("div");
@@ -198,12 +215,15 @@ function displayForecast3(data) {
 
     mainCard3.append(currentDate3, icon3, temperature3, windSpeed3, humidity3);
 
-        //Append display-weather to temperature
+        //Append display-foreast to main card
         $("#display-forecast3").append(mainCard3);
         console.log(data);
 }
 
+//Function to display forecast for 4th day
 function displayForecast4(data) {
+
+    //Clear previous row
     $("#display-forecast4").empty();
         
     var mainCard4 = document.createElement("div");
@@ -230,12 +250,15 @@ function displayForecast4(data) {
 
     mainCard4.append(currentDate4, icon4, temperature4, windSpeed4, humidity4);
 
-        //Append display-weather to temperature
+        //Append display-foreast to main card
         $("#display-forecast4").append(mainCard4);
         console.log(data);
 }
 
+//Function to display forecast for 5th day
 function displayForecast5(data) {
+    
+    //Clear previous row
     $("#display-forecast5").empty();
         
     var mainCard5 = document.createElement("div");
@@ -262,7 +285,7 @@ function displayForecast5(data) {
 
     mainCard5.append(currentDate5, icon5, temperature5, windSpeed5, humidity5);
 
-        //Append display-weather to temperature
+        //Append display-foreast to main card
         $("#display-forecast5").append(mainCard5);
         console.log(data);
 }
