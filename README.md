@@ -11,10 +11,9 @@ This application uses server-side APIs to retreive data from a separate weather 
 - Type the name of a U.S. city in the search bar and click 'search'
 - The current temperature, wind speed, humidty level, UV Index and 5-day forecast will then be displayed
 - After a city has been searched, that city name will be added to the search history list
-- Click on a city in the search history list to display the weather data on that city
 
 #
-![image](https://user-images.githubusercontent.com/92955084/147171593-44037b70-5afa-48a4-9d58-128b8480f683.png)
+<img width="1259" alt="Screen Shot 2022-01-03 at 6 35 58 PM" src="https://user-images.githubusercontent.com/92955084/147998219-678c551b-1b6b-44d6-8ffb-68e8f9dcede0.png">
 
 
 ## URL

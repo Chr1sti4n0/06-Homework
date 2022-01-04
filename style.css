@@ -25,6 +25,10 @@ h1 {
     display: inline-flex;
 }
 
+#dashboard {
+    padding-left: 50px;
+}
+
 #forecast-container {
     display: flex;
     /* background-color: rgb(223, 182, 182); */
@@ -38,6 +42,7 @@ h1 {
     margin: 10px;
 }
 
+/* List of previous searches */
 #search-list button {
     color: rgb(246, 248, 248);
     height: 30px;
@@ -46,13 +51,6 @@ h1 {
     display: block;
     margin: 2px;
 }
-/* Search list syling */
-/* #search-list.button {
-    display: block;
-    padding: 3px;
-    color: burlywood;
-    
-} */
 
 /* 5 day forecast styling */
 #display-forecast1 {
