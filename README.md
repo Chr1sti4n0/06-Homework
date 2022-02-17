@@ -1,59 +1,25 @@
-# PWA Text Editor
+# Weather Dashboard
 
-### PWA | idb | IndexedDB | Webpack | Babel
-
-#
-
-## Table of Contents
-  *[Description](#description)
-  *[Installation](#installation)
-  *[Usage](#usage)
-  *[Tests](#tests)
-  *[Heroku](#Heroku)
-
-  ## Description 
-  This application involves the use of the idb package to generate functions that will save and pull data from a databse. The application is an online text editor with the capability of running while offline. 
-
-#
-## Web Application in Browser
-
-![image](https://user-images.githubusercontent.com/92955084/154203261-423dc01e-7792-4b52-aa43-4e5797a3716d.png)
-
-## Downloaded Web Application
-
-![image](https://user-images.githubusercontent.com/92955084/154203382-c87d2394-5a03-4dad-9afc-16713b78a078.png)
+### APIs | localStorage
 
 #
 
-  <a name='installation'></a>
-
-  ## Installation
-  #
-  express | nodemon | concurrently | if-env | babel-loader | css-loader | idb | workbox 
-  
-#
-  <a name='usage'></a>
-
-  ## Usage
-  This application can be used as an online or offline text editor. If switching from online to offline, the written code/text will be saved and remain present. 
+### Description
+This application uses server-side APIs to retreive data from a separate weather application and display it in a specific format. The search bar allows for the user to search for any U.S. city and find the current temperature, wind speed, humidity level, UV Index, and 5-day forecast of that city. 
 
 #
-  <a name='tests'></a>
 
-  ## Tests
-  This application did not involve the use of unit testing. The application was tested/ran by running npm start in the terminal. 
+### How To Use
+- Type the name of a U.S. city in the search bar and click 'search'
+- The current temperature, wind speed, humidty level, UV Index and 5-day forecast will then be displayed
+- After a city has been searched, that city name will be added to the search history list
 
 #
-  <a name='Heroku'></a>
-
-  ## Heroku
-
-  https://pwa-text-editor-it-works.herokuapp.com/
-  
+<img width="1259" alt="Screen Shot 2022-01-03 at 6 35 58 PM" src="https://user-images.githubusercontent.com/92955084/147998219-678c551b-1b6b-44d6-8ffb-68e8f9dcede0.png">
 
 
+## URL
 
-  
+Deployed Application: 
 
-
-
+https://chr1sti4n0.github.io/Weather-Dashboard/
