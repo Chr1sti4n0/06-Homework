@@ -1,6 +1,8 @@
-# Christian Jimenez - Homework Assignment 6
+# Weather Dashboard
 
-## Weather Dashboard
+### APIs | localStorage
+
+#
 
 ### Description
 This application uses server-side APIs to retreive data from a separate weather application and display it in a specific format. The search bar allows for the user to search for any U.S. city and find the current temperature, wind speed, humidity level, UV Index, and 5-day forecast of that city. 
@@ -17,6 +19,3 @@ This application uses server-side APIs to retreive data from a separate weather 
 
 
 ## URL
-GitHub URL: https://github.com/Chr1sti4n0/06-Homework
-#
-GitHub Pages: https://chr1sti4n0.github.io/06-Homework/
